@@ -59,8 +59,8 @@ app.get('/remove-item/:id', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log("Server is running on PORT 3000");
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server has running successfully");
 })
 
 module.exports = app;
