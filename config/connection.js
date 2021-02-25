@@ -5,8 +5,8 @@ const state = {
 }
 
 module.exports.connect = (done)=>{
+    //database connection
     const url = "mongodb://localhost:27017/todoList";
-
     MongoClient.connect(url,{ useUnifiedTopology: true },(err,data)=>{
         if (err) return done(err)
         state.db = data.db("todList");
