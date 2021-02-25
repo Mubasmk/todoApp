@@ -1,0 +1,22 @@
+<div id="heading" class="box">
+    <h1>Today
+        <span class="day">{{day}}</span>
+    </h1>
+</div>
+
+<div class="box">
+    <div class="content">
+        {{#each items}}
+    
+        <div class="item">
+            <a href="/remove-item/{{this._id}}" class="fa fa-trash-o"></a>
+            <span>{{this.newItem}}</span>
+        </div>
+        {{/each}}
+        <form action="/" method="POST">
+            <input type="text" name="newItem" placeholder="New Item">
+            <button type="submit">+</button>
+        </form>
+    </div>
+</div>
+
