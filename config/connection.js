@@ -1,4 +1,6 @@
+const dotenv = require('dotenv');
 const MongoClient = require('mongodb').MongoClient;
+dotenv.config()
 
 const state = {
     db:null
@@ -6,7 +8,7 @@ const state = {
 
 module.exports.connect = (done)=>{
     //database connection
-    const url = "mongodb+srv://mubasmk:ichumachu555@cluster0.wqoqx.mongodb.net/todoList";
+    var url =process.env.DB_URL;
     MongoClient.connect(url,{ useUnifiedTopology: true },(err,data)=>{
         if (err) return done(err)
         state.db = data.db("todList");
